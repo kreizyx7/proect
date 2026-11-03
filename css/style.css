@@ -1,0 +1,189 @@
+body {
+    margin: 0;
+    background-color: #81a256;
+    font-family: Lato, Arial, sans-serif;
+    color: white;
+}
+ul {
+    margin: 0;
+    padding: 0;
+}
+ul li {
+    list-style-type: none;
+}
+a {
+    text-decoration: none;
+    color: white;
+}
+img {
+    display: block;
+}
+.container {
+    margin: 0 auto;
+    width: 1100px;
+}
+
+header {
+    height: 48px;
+}
+.logo {
+    float: left;
+    margin-top: 11px;
+    margin-left: 1px;
+}
+.menu {
+    float: right;
+}
+.menu li {
+    float: left;
+    margin-left: 43px;
+}
+.menu li:nth-child(2) {
+    margin-left: 60px;
+}
+.menu li:nth-child(4) {
+    margin-left: 33px;
+}
+.menu li:nth-child(5) {
+    margin-left: 35px;
+}
+.menu a {
+    display: block;
+    height: 48px;
+    line-height: 48px;
+    font-size: 18px;
+}
+.menu a.active {
+    padding: 0 28px;
+    background-color: #a1ca6c;
+    border-radius: 0 0 3px 3px;
+}
+.menu a:hover {
+    background-color: #94b963;
+}
+.menu a.active:hover {
+    background-color: #a1ca6c;
+}
+
+h1 {
+    margin: 0;
+    padding-top: 113px;
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 62px;
+    font-weight: 400;
+    line-height: 74px;
+}
+p {
+    margin: 14px 0 0 0;
+    text-align: center;
+    font-size: 14px;
+    line-height: 24px;
+}
+
+.portfolio-bar {
+    margin-top: 53px;
+    height: 101px;
+    box-sizing: border-box;
+    border-top: 1px solid #94b963;
+    border-bottom: 1px solid #94b963;
+}
+.portfolio-bar h2 {
+    float: left;
+    margin: 0;
+    padding-left: 18px;
+    line-height: 99px;
+    font-size: 21px;
+    text-transform: uppercase;
+}
+.filter {
+    float: right;
+    margin-top: 32px;
+    margin-right: 20px;
+}
+.filter li {
+    float: left;
+}
+.filter li:nth-child(2) {
+    margin-left: 37px;
+}
+.filter li:nth-child(3) {
+    margin-left: 34px;
+}
+.filter li:nth-child(4) {
+    margin-left: 45px;
+}
+.filter a {
+    display: block;
+    padding: 0 8px;
+    height: 35px;
+    line-height: 33px;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 3px;
+}
+.filter a:hover {
+    background-color: #94b963;
+}
+.filter a.active {
+    background-color: #f5c149;
+}
+
+.cards {
+    margin-top: 47px;
+    overflow: hidden;
+}
+.card {
+    position: relative;
+    float: left;
+    width: 260px;
+    margin-right: 20px;
+    margin-bottom: 20px;
+    background-color: #eee;
+    border-radius: 3px;
+}
+.card:nth-child(4n) {
+    margin-right: 0;
+}
+.card img {
+    border-radius: 3px 3px 0 0;
+}
+.card h3 {
+    position: relative;
+    margin: 0;
+    height: 50px;
+    line-height: 49px;
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 14px;
+    font-weight: normal;
+    color: #727272;
+}
+
+.card h3:before {
+    content: "";
+    position: absolute;
+    left: 113px;
+    top: -18px;
+    border-left: 17px solid transparent;
+    border-right: 17px solid transparent;
+    border-bottom: 18px solid #eee;
+}
+
+.overlay {
+    display: none;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 260px;
+    height: 200px;
+    background-color: rgba(61, 77, 41, 0.7);
+    border-radius: 3px 3px 0 0;
+}
+.overlay img {
+    margin: 75px 0 0 105px;
+}
+.card:hover .overlay,
+.overlay.show {
+    display: block;
+}
