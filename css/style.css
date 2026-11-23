@@ -1,81 +1,95 @@
+* {
+    box-sizing: border-box;
+}
+
 body {
     margin: 0;
     background-color: #81a256;
     font-family: Lato, Arial, sans-serif;
     color: white;
 }
+
 ul {
     margin: 0;
     padding: 0;
 }
+
 ul li {
     list-style-type: none;
 }
+
 a {
     text-decoration: none;
     color: white;
 }
+
 img {
     display: block;
+    max-width: 100%;
+    height: auto;
 }
+
 .container {
     margin: 0 auto;
-    width: 1100px;
+    width: 92%;
+    max-width: 1100px;
 }
 
 header {
-    height: 48px;
+    min-height: 48px;
 }
+
+header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
 .logo {
-    float: left;
-    margin-top: 11px;
-    margin-left: 1px;
+    margin-top: 8px;
 }
-.menu {
-    float: right;
+
+.menu ul {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 35px;
 }
-.menu li {
-    float: left;
-    margin-left: 43px;
-}
-.menu li:nth-child(2) {
-    margin-left: 60px;
-}
-.menu li:nth-child(4) {
-    margin-left: 33px;
-}
-.menu li:nth-child(5) {
-    margin-left: 35px;
-}
+
 .menu a {
     display: block;
     height: 48px;
     line-height: 48px;
     font-size: 18px;
 }
+
 .menu a.active {
     padding: 0 28px;
     background-color: #a1ca6c;
     border-radius: 0 0 3px 3px;
 }
+
 .menu a:hover {
     background-color: #94b963;
 }
+
 .menu a.active:hover {
     background-color: #a1ca6c;
 }
 
 h1 {
     margin: 0;
-    padding-top: 113px;
+    padding-top: 90px;
     text-align: center;
     text-transform: uppercase;
-    font-size: 62px;
+    font-size: clamp(32px, 5vw, 62px);
     font-weight: 400;
-    line-height: 74px;
+    line-height: 1.2;
 }
+
 p {
-    margin: 14px 0 0 0;
+    margin: 14px auto 0 auto;
+    max-width: 900px;
     text-align: center;
     font-size: 14px;
     line-height: 24px;
@@ -83,76 +97,71 @@ p {
 
 .portfolio-bar {
     margin-top: 53px;
-    height: 101px;
-    box-sizing: border-box;
+    padding: 25px 20px;
     border-top: 1px solid #94b963;
     border-bottom: 1px solid #94b963;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 15px;
 }
+
 .portfolio-bar h2 {
-    float: left;
     margin: 0;
-    padding-left: 18px;
-    line-height: 99px;
     font-size: 21px;
     text-transform: uppercase;
 }
-.filter {
-    float: right;
-    margin-top: 32px;
-    margin-right: 20px;
+
+.filter ul {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 25px;
 }
-.filter li {
-    float: left;
-}
-.filter li:nth-child(2) {
-    margin-left: 37px;
-}
-.filter li:nth-child(3) {
-    margin-left: 34px;
-}
-.filter li:nth-child(4) {
-    margin-left: 45px;
-}
+
 .filter a {
     display: block;
-    padding: 0 8px;
+    padding: 0 12px;
     height: 35px;
-    line-height: 33px;
+    line-height: 35px;
     font-size: 16px;
     font-weight: bold;
     border-radius: 3px;
 }
+
 .filter a:hover {
     background-color: #94b963;
 }
+
 .filter a.active {
     background-color: #f5c149;
 }
 
 .cards {
     margin-top: 47px;
-    overflow: hidden;
+    margin-bottom: 40px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
 }
+
 .card {
     position: relative;
-    float: left;
-    width: 260px;
-    margin-right: 20px;
-    margin-bottom: 20px;
+    width: 100%;
     background-color: #eee;
     border-radius: 3px;
 }
-.card:nth-child(4n) {
-    margin-right: 0;
-}
-.card img {
+
+.card > img {
+    width: 100%;
     border-radius: 3px 3px 0 0;
 }
+
 .card h3 {
     position: relative;
     margin: 0;
     height: 50px;
-    line-height: 49px;
+    line-height: 50px;
     text-align: center;
     text-transform: uppercase;
     font-size: 14px;
@@ -163,7 +172,8 @@ p {
 .card h3:before {
     content: "";
     position: absolute;
-    left: 113px;
+    left: 50%;
+    transform: translateX(-50%);
     top: -18px;
     border-left: 17px solid transparent;
     border-right: 17px solid transparent;
@@ -175,15 +185,70 @@ p {
     position: absolute;
     left: 0;
     top: 0;
-    width: 260px;
-    height: 200px;
+    width: 100%;
+    height: calc(100% - 50px);
     background-color: rgba(61, 77, 41, 0.7);
     border-radius: 3px 3px 0 0;
+    justify-content: center;
+    align-items: center;
 }
-.overlay img {
-    margin: 75px 0 0 105px;
-}
+
 .card:hover .overlay,
 .overlay.show {
-    display: block;
+    display: flex;
+}
+
+@media screen and (max-width: 960px) {
+    p br {
+        display: none;
+    }
+
+    .cards {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media screen and (max-width: 680px) {
+    header .container {
+        flex-direction: column;
+        padding-top: 15px;
+        gap: 15px;
+    }
+
+    .menu ul {
+        justify-content: center;
+        gap: 10px;
+    }
+
+    .menu a {
+        height: 38px;
+        line-height: 38px;
+        font-size: 16px;
+        padding: 0 12px;
+    }
+
+    .menu a.active {
+        border-radius: 3px;
+    }
+
+    h1 {
+        padding-top: 45px;
+    }
+
+    .portfolio-bar {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .filter ul {
+        justify-content: center;
+        gap: 10px;
+    }
+}
+
+/* Малі смартфони */
+@media screen and (max-width: 480px) {
+    .cards {
+        grid-template-columns: 1fr;
+    }
 }
